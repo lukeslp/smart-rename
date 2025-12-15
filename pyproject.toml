@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-rename"
+version = "0.1.0"
+description = "AI-powered intelligent file renaming tools for media and academic PDFs"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Luke Steuber", email = "luke@lukesteuber.com"}
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pymupdf>=1.20.0",
+    "openai>=1.0.0",
+    "rich>=13.0.0",
+    "requests>=2.25.0",
+    "opencv-python-headless>=4.0.0",
+    "pillow>=9.0.0",
+    "python-dotenv>=1.0.0"
+]
+
+[project.scripts]
+smart-rename = "smart_rename.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+
+[tool.black]
+line-length = 100
